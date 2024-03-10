@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     
     [Header("References")]
     private Canvas menu;
+    public GameObject debugObject;
+    public bool debugMode;
 
     [Header("Constants")]
     public float textDefaultSize = 22;
@@ -28,6 +30,10 @@ public class UIManager : MonoBehaviour
 
         textDefaultSize = 22;
         textHoverSize = 28;
+
+        if (!debugMode) {
+            debugObject.SetActive(false);
+        }
     }
 
     void CreateSingleton()
@@ -80,6 +86,21 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
 
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void LoadLevel(int level){
+        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        player.cameraCanMove = true;
+        player.playerCanMove = true;
+
+
+        menu.enabled = false;
+        inMenu = false;
+        Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.LoadScene(level);
     }
 
     private void Update(){
