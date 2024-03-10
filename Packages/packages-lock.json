@@ -1,14 +1,11 @@
 {
   "dependencies": {
-<<<<<<< Updated upstream
-=======
     "com.blendernodesgraph.core": {
       "version": "file:blendernodesgraph",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
     },
->>>>>>> Stashed changes
     "com.unity.burst": {
       "version": "1.8.11",
       "depth": 1,
