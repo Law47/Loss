@@ -70,6 +70,15 @@ public class UIManager : MonoBehaviour
     }
 
     public void QuitToMenu(){
+        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        player.cameraCanMove = true;
+        player.playerCanMove = true;
+
+
+        menu.enabled = false;
+        inMenu = false;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("MenuScene");
     }
 
