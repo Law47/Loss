@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Menu_SceneManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    public static Menu_SceneManager instance = null;
+    public static MenuManager instance = null;
 
     [Header("UI Constants")]
     public float textDefaultSize;
@@ -28,7 +29,7 @@ public class Menu_SceneManager : MonoBehaviour
     }
 
     public void StartGameplayScene(){
-
+        SceneManager.LoadScene("Level1");
     }
 
     public void ExitGame(){
