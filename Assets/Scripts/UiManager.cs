@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     
     [Header("References")]
-    public Canvas menu;
+    private Canvas menu;
 
     private bool inMenu;
+    public int hiearchy;
 
     private void Awake()
     {
         CreateSingleton();
+
+        menu = gameObject.GetComponentInChildren<Canvas>();
 
         inMenu = false;
         menu.enabled = false;
@@ -21,10 +25,14 @@ public class UIManager : MonoBehaviour
 
     void CreateSingleton()
     {
+        hiearchy = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
             instance = this;
         else
-            Destroy(gameObject);
+            if (instance.hiearchy < hiearchy)
+                Destroy(gameObject);
+            else if (instance.hiearchy == hiearchy)
+                Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
     }

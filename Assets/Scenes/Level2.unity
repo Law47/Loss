@@ -540,7 +540,6 @@ MonoBehaviour:
   frontReceptOffset: 30
   backReceptOffset: 20
   frontReceptSpeed: 0
-  frontReceptPos: {x: 0, y: 0, z: 0}
 --- !u!1 &467603036733767236
 GameObject:
   m_ObjectHideFlags: 0
