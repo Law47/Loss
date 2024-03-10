@@ -11,8 +11,8 @@ public class Menu_SceneManager : MonoBehaviour
     public float textHoverSize;
 
     [Header("UI Canvas Refrences")]
-    public GameObject mainMenuCanvas;
-    public GameObject creditsCanvas;
+    public Canvas mainMenuCanvas;
+    public Canvas creditsCanvas;
 
     private void Awake(){
         if (instance == null)
@@ -23,8 +23,8 @@ public class Menu_SceneManager : MonoBehaviour
         textDefaultSize = 22;
         textHoverSize = 28;
 
-        mainMenuCanvas.SetActive(true);
-        creditsCanvas.SetActive(false);
+        mainMenuCanvas.enabled = true;
+        creditsCanvas.enabled = false;
     }
 
     public void StartGameplayScene(){
@@ -36,12 +36,12 @@ public class Menu_SceneManager : MonoBehaviour
     }
 
     public void EnterCredits(){
-        mainMenuCanvas.SetActive(false);
-        creditsCanvas.SetActive(true);
+        mainMenuCanvas.enabled = false;
+        creditsCanvas.enabled = true;
     }
 
     public void ExitCredits(){
-        mainMenuCanvas.SetActive(true);
-        creditsCanvas.SetActive(false);
+        mainMenuCanvas.enabled = true;
+        creditsCanvas.enabled = false;
     }
 }
