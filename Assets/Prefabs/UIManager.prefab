@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c00b4d6fa0018a419c9ce93ae3acb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inMenu: 0
   hiearchy: 0
 --- !u!1 &6180508473653729347
 GameObject:
@@ -195,7 +196,7 @@ GameObject:
   - component: {fileID: 6570241915291755549}
   - component: {fileID: 2958187132891183185}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
