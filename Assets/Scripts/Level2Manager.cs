@@ -7,7 +7,7 @@ public class Level2Manager : MonoBehaviour
 {
     public static Level2Manager instance = null;
 
-    [Header("Transform References")]
+    [Header("GameObject References")]
     public GameObject frontRecept;
     public GameObject backRecept;
     public GameObject player;
@@ -17,9 +17,6 @@ public class Level2Manager : MonoBehaviour
     public float frontReceptOffset;
     public float backReceptOffset;
     public float frontReceptSpeed;
-
-    [Header("Debug")]
-    public Vector3 frontReceptPos;
 
     private float playerMovedDistance;
 
@@ -66,6 +63,5 @@ public class Level2Manager : MonoBehaviour
         if (player.transform.position.z > playerMovedDistance){
             playerMovedDistance = player.transform.position.z;
         }
-        frontReceptPos = frontRecept.transform.position;
     }
 }
