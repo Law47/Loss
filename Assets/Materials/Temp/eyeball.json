@@ -1,0 +1,88 @@
+{
+    "nodeDatas": [
+        {
+            "location": [
+                300.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeOutputMaterial.Material Output"
+        },
+        {
+            "location": [
+                10.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeBsdfPrincipled.Principled BSDF"
+        },
+        {
+            "connections0Name": [],
+            "connections0NodeName": [],
+            "connections1Name": [
+                "Vector"
+            ],
+            "connections1NodeName": [
+                "ShaderNodeSeparateXYZ.Separate XYZ"
+            ],
+            "connections2Name": [],
+            "connections2NodeName": [],
+            "connections3Name": [],
+            "connections3NodeName": [],
+            "connections4Name": [],
+            "connections4NodeName": [],
+            "location": [
+                -875.6710815429688,
+                361.3033142089844
+            ],
+            "name": "ShaderNodeTexCoord.Texture Coordinate"
+        },
+        {
+            "connections0Name": [],
+            "connections0NodeName": [],
+            "connections1Name": [
+                "Fac"
+            ],
+            "connections1NodeName": [
+                "ShaderNodeValToRGB.Color Ramp"
+            ],
+            "connections2Name": [],
+            "connections2NodeName": [],
+            "location": [
+                -656.0000610351562,
+                349.60040283203125
+            ],
+            "name": "ShaderNodeSeparateXYZ.Separate XYZ",
+            "properties": [
+                "0.0",
+                "0.0",
+                "0.0"
+            ]
+        },
+        {
+            "connections0Name": [
+                "Base Color"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBsdfPrincipled.Principled BSDF"
+            ],
+            "location": [
+                -413.7032165527344,
+                368.505615234375
+            ],
+            "name": "ShaderNodeValToRGB.Color Ramp",
+            "properties": [
+                "1.0-1.0-1.0-1.0-0.25090959668159485|0.513734757900238-0.5214095115661621-0.906814455986023-1.0-0.8000000715255737|0.0-0.0-0.0-1.0-0.9018182754516602|",
+                "RGB",
+                "CONSTANT",
+                "NEAR",
+                "0.5"
+            ]
+        },
+        {
+            "name": "EXTRA",
+            "properties": [
+                "True",
+                "True"
+            ]
+        }
+    ]
+}

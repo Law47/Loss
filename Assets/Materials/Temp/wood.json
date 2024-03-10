@@ -1,0 +1,131 @@
+{
+    "nodeDatas": [
+        {
+            "connections0Name": [
+                "Height"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBump.Bump"
+            ],
+            "location": [
+                -615.87255859375,
+                30.125646591186523
+            ],
+            "name": "ShaderNodeValToRGB.Color Ramp.001",
+            "properties": [
+                "0.0-0.0-0.0-1.0-0.0|1.0-1.0-1.0-1.0-1.0|",
+                "RGB",
+                "LINEAR",
+                "NEAR",
+                "0.5"
+            ]
+        },
+        {
+            "connections0Name": [
+                "Normal"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBsdfPrincipled.Principled BSDF"
+            ],
+            "location": [
+                -255.6161651611328,
+                12.9114990234375
+            ],
+            "name": "ShaderNodeBump.Bump",
+            "properties": [
+                "True",
+                "0.040333330631256104",
+                "1.0"
+            ]
+        },
+        {
+            "connections0Name": [
+                "Roughness"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBsdfPrincipled.Principled BSDF"
+            ],
+            "location": [
+                -611.8928833007812,
+                336.0044860839844
+            ],
+            "name": "ShaderNodeValToRGB.Color Ramp.002",
+            "properties": [
+                "0.4312213659286499-0.4312213659286499-0.4312213659286499-1.0-0.0|0.4277161955833435-0.4277161955833435-0.4277161955833435-1.0-1.0|",
+                "RGB",
+                "LINEAR",
+                "NEAR",
+                "0.5"
+            ]
+        },
+        {
+            "connections0Name": [
+                "Fac",
+                "Fac",
+                "Fac"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeValToRGB.Color Ramp",
+                "ShaderNodeValToRGB.Color Ramp.001",
+                "ShaderNodeValToRGB.Color Ramp.002"
+            ],
+            "location": [
+                -1073.9249267578125,
+                479.72283935546875
+            ],
+            "name": "ShaderNodeTexMusgrave.Musgrave Texture",
+            "properties": [
+                "3D",
+                "RIDGED_MULTIFRACTAL",
+                "0.0",
+                "7.199999809265137",
+                "2.0",
+                "2.0",
+                "2.0",
+                "0.0",
+                "1.0"
+            ]
+        },
+        {
+            "location": [
+                430.51824951171875,
+                404.5589904785156
+            ],
+            "name": "NULL.ShaderNodeOutputMaterial.Material Output"
+        },
+        {
+            "location": [
+                156.7205047607422,
+                390.1370544433594
+            ],
+            "name": "NULL.ShaderNodeBsdfPrincipled.Principled BSDF"
+        },
+        {
+            "connections0Name": [
+                "Base Color"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBsdfPrincipled.Principled BSDF"
+            ],
+            "location": [
+                -508.69000244140625,
+                552.5718994140625
+            ],
+            "name": "ShaderNodeValToRGB.Color Ramp",
+            "properties": [
+                "0.30714279413223267-0.15780852735042572-0.08401967585086823-1.0-0.0|0.14710122346878052-0.07747384905815125-0.04264143854379654-1.0-0.15272724628448486|0.28993502259254456-0.14954009652137756-0.07986703515052795-1.0-0.33454620838165283|",
+                "RGB",
+                "LINEAR",
+                "NEAR",
+                "0.5"
+            ]
+        },
+        {
+            "name": "EXTRA",
+            "properties": [
+                "True",
+                "True"
+            ]
+        }
+    ]
+}

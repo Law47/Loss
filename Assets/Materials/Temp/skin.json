@@ -1,0 +1,55 @@
+{
+    "nodeDatas": [
+        {
+            "location": [
+                300.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeOutputMaterial.Material Output"
+        },
+        {
+            "location": [
+                10.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeBsdfPrincipled.Principled BSDF"
+        },
+        {
+            "connections0Name": [
+                "Factor_Float"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeMix.Mix"
+            ],
+            "connections1Name": [],
+            "connections1NodeName": [],
+            "location": [
+                -771.8263549804688,
+                376.2897644042969
+            ],
+            "name": "ShaderNodeTexNoise.Noise Texture",
+            "properties": [
+                "3D",
+                "0.0",
+                "3.8000001907348633",
+                "15.0",
+                "0.35333335399627686",
+                "2.0"
+            ]
+        },
+        {
+            "location": [
+                -292.80426025390625,
+                337.6157531738281
+            ],
+            "name": "NULL.ShaderNodeMix.Mix"
+        },
+        {
+            "name": "EXTRA",
+            "properties": [
+                "True",
+                "True"
+            ]
+        }
+    ]
+}
