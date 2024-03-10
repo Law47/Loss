@@ -10,14 +10,14 @@ public class UIManager : MonoBehaviour
     [Header("References")]
     private Canvas menu;
 
-    private bool inMenu;
+    public bool inMenu;
     public int hiearchy;
 
     private void Awake()
     {
         CreateSingleton();
 
-        menu = gameObject.GetComponentInChildren<Canvas>();
+        menu = transform.Find("Menu").gameObject.GetComponent<Canvas>();
 
         inMenu = false;
         menu.enabled = false;

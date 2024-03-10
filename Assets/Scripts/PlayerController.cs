@@ -25,10 +25,13 @@ public class PlayerController : MonoBehaviour
     public float pullForce;
     private float originalDist;
 
+    private UIManager uiManager;
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         playerCamera.fieldOfView = fov;
+        uiManager = GameObject.FindAnyObjectByType<UIManager>();
     }
 
     void Start() {
@@ -39,18 +42,18 @@ public class PlayerController : MonoBehaviour
     float camRotation;
 
     private void Update() {
-        if (cameraCanMove) {
+        if (cameraCanMove && !uiManager.inMenu) {
+            PickUp();
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
             pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
             transform.localEulerAngles = new Vector3(0, yaw, 0);
             playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
         }
-        PickUp();
     }
 
     void FixedUpdate() {
-        if (playerCanMove) {
+        if (playerCanMove && !uiManager.inMenu) {
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
             Vector3 velocity = rb.velocity;
