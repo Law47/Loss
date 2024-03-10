@@ -7,13 +7,13 @@ using TMPro;
 public class QuitButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private TextMeshProUGUI textBox;
-    private Menu_SceneManager sceneManager;
+    private MenuManager sceneManager;
     
 
     private void Awake()
     {
         textBox = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        sceneManager = GameObject.FindFirstObjectByType<Menu_SceneManager>();
+        sceneManager = GameObject.FindFirstObjectByType<MenuManager>();
     }
 
     private void Start()
