@@ -85,6 +85,10 @@ public class PlayerController : MonoBehaviour
                         originalDist = Vector3.Distance(heldObj.transform.position, playerCamera.transform.position);
                         holding = true;
                     }
+                    if (heldObj.transform.CompareTag("Handle")) {
+                        heldObj.transform.GetComponent<Handle>().ReportInitial(playerCamera.transform.eulerAngles.x);
+                        holding = true;
+                    }
                 }
             }
         }
@@ -95,12 +99,16 @@ public class PlayerController : MonoBehaviour
     }
 
     private void PickUpPull() {
-        if (holding && (heldObj.transform.CompareTag("PickUp") || heldObj.transform.CompareTag("SpellPage"))) {
+        if (holding && heldObj.transform.CompareTag("PickUp")) {
             Vector3 target = playerCamera.transform.position + playerCamera.transform.forward * originalDist;
             Vector3 toTarget = target - heldObj.transform.position;
             float springForceMagnitude = pullForce * toTarget.magnitude;
             Vector3 dampingForce = -0.1f * heldObj.transform.GetComponent<Rigidbody>().velocity;
             heldObj.transform.GetComponent<Rigidbody>().AddForce(springForceMagnitude * toTarget.normalized + dampingForce, ForceMode.VelocityChange);
+        }
+        //Handles handles haha alliteration im going insane
+        if (holding && heldObj.transform.CompareTag("Handle")) {
+            heldObj.transform.GetComponent<Handle>().ReportAngle(playerCamera.transform.eulerAngles.x);
         }
     }
 }
