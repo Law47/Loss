@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     [Header("References")]
     private Canvas menu;
 
+    [Header("Constants")]
+    public float textDefaultSize = 22;
+    public float textHoverSize = 28;
+
     public bool inMenu;
     public int hiearchy;
 
@@ -21,6 +25,9 @@ public class UIManager : MonoBehaviour
 
         inMenu = false;
         menu.enabled = false;
+
+        textDefaultSize = 22;
+        textHoverSize = 28;
     }
 
     void CreateSingleton()
@@ -45,6 +52,8 @@ public class UIManager : MonoBehaviour
         menu.enabled = true;
         inMenu = true;
         Time.timeScale = 0;
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void ExitMenu(){
@@ -56,6 +65,12 @@ public class UIManager : MonoBehaviour
         menu.enabled = false;
         inMenu = false;
         Time.timeScale = 1;
+
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void QuitToMenu(){
+        SceneManager.LoadScene("MenuScene");
     }
 
     private void Update(){
