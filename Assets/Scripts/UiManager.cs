@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
     }
 
     void CreateSingleton()
-    {
+    {   
         hiearchy = SceneManager.GetActiveScene().buildIndex;
         if (instance == null)
             instance = this;
@@ -46,6 +46,11 @@ public class UIManager : MonoBehaviour
                 Destroy(gameObject);
             else if (instance.hiearchy == hiearchy)
                 Destroy(gameObject);
+            else if (instance.hiearchy > hiearchy){
+                Destroy(instance.gameObject);
+                instance = this;
+            }
+            
 
         DontDestroyOnLoad(gameObject);
     }
