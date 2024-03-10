@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Room : MonoBehaviour
 {
     public GameObject[] connectors;
-    void Start()
-    {
-        Generate();
-    }
+    private GameObject[] children;
     
     public void Generate() {
-        foreach (GameObject connector in connectors) {
+        children = new GameObject[connectors.Length];
+        for (int i = 0; i < connectors.Length; i++) {
             int doors;
             doors = Random.Range(0, 3);
             switch (doors) {
@@ -26,8 +25,17 @@ public class Room : MonoBehaviour
                 doors = 4;
                 break;
             }
-            Instantiate((GameObject)Resources.Load("Rooms/" + doors + "/" + Random.Range(0,1).ToString()), connector.transform.position, connector.transform.rotation);
-            Destroy(connector);
+            children[i] = Instantiate((GameObject)Resources.Load("Rooms/" + doors + "/" + Random.Range(0,1).ToString()), connectors[i].transform.position, connectors[i].transform.rotation);
+            Destroy(connectors[i]);
         }
+    }
+
+    public void Despawn(int dont) {
+        for (int i = 0; i < children.Length; i++) {
+            if (i != dont) {
+                Destroy(children[i]);
+            }
+        }
+        Destroy(gameObject);
     }
 }
