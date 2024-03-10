@@ -9,7 +9,7 @@ public class Handle : MonoBehaviour
     private float init;
     void Start()
     {
-        table = transform.parent.parent.gameObject;
+        table = transform.parent.gameObject;
     }
 
     public void ReportInitial(float rot) {

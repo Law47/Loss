@@ -12,15 +12,12 @@ public class Room : MonoBehaviour
         children = new GameObject[connectors.Length];
         for (int i = 0; i < connectors.Length; i++) {
             int doors;
-            doors = Random.Range(0, 3);
+            doors = Random.Range(0, 2);
             switch (doors) {
             case 0:
                 doors = 1;
                 break;
             case 1:
-                doors = 3;
-                break;
-            case 2:
                 doors = 4;
                 break;
             }

@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugObject: {fileID: 3381241472070357437}
-  debugMode: 1
+  debugMode: 0
   textDefaultSize: 22
   textHoverSize: 28
   inMenu: 0

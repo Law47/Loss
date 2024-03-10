@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void EnterMenu(){
-        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.cameraCanMove = false;
         player.playerCanMove = false;
 
@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void ExitMenu(){
-        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.cameraCanMove = true;
         player.playerCanMove = true;
 
@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void QuitToMenu(){
-        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.cameraCanMove = true;
         player.playerCanMove = true;
 
@@ -94,7 +94,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void LoadLevel(int level){
-        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        PlayerController player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player.cameraCanMove = true;
         player.playerCanMove = true;
 
