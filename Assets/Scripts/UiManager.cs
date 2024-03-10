@@ -38,19 +38,28 @@ public class UIManager : MonoBehaviour
     }
 
     public void EnterMenu(){
+        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        player.cameraCanMove = false;
+        player.playerCanMove = false;
+
         menu.enabled = true;
         inMenu = true;
         Time.timeScale = 0;
     }
 
     public void ExitMenu(){
+        PlayerController player = GameObject.FindFirstObjectByType<PlayerController>();
+        player.cameraCanMove = true;
+        player.playerCanMove = true;
+
+
         menu.enabled = false;
         inMenu = false;
         Time.timeScale = 1;
     }
 
     private void Update(){
-        if (Input.GetKeyDown("escape")){
+        if (Input.GetKeyDown("escape") && SceneManager.GetActiveScene().buildIndex != 0){
             if (!inMenu) EnterMenu();
             else ExitMenu();
         }
