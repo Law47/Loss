@@ -1,0 +1,51 @@
+{
+    "nodeDatas": [
+        {
+            "location": [
+                10.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeBsdfPrincipled.Principled BSDF"
+        },
+        {
+            "location": [
+                300.0,
+                300.0
+            ],
+            "name": "NULL.ShaderNodeOutputMaterial.Material Output"
+        },
+        {
+            "connections0Name": [
+                "Base Color"
+            ],
+            "connections0NodeName": [
+                "ShaderNodeBsdfPrincipled.Principled BSDF"
+            ],
+            "connections1Name": [],
+            "connections1NodeName": [],
+            "location": [
+                -245.1232452392578,
+                232.102783203125
+            ],
+            "name": "ShaderNodeTexChecker.Checker Texture",
+            "properties": [
+                "0.05203690752387047",
+                "0.10862377285957336",
+                "0.8012049198150635",
+                "1.0",
+                "0.19977575540542603",
+                "0.031245479360222816",
+                "0.006213884335011244",
+                "1.0",
+                "5.0"
+            ]
+        },
+        {
+            "name": "EXTRA",
+            "properties": [
+                "True",
+                "True"
+            ]
+        }
+    ]
+}
