@@ -812,8 +812,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDefaultSize: 0
   textHoverSize: 0
-  mainMenuCanvas: {fileID: 1575014778}
-  creditsCanvas: {fileID: 498720062}
+  mainMenuCanvas: {fileID: 1575014781}
+  creditsCanvas: {fileID: 498720065}
 --- !u!1 &689413656
 GameObject:
   m_ObjectHideFlags: 0
