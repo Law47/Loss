@@ -31,7 +31,15 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         playerCamera.fieldOfView = fov;
-        uiManager = GameObject.FindAnyObjectByType<UIManager>();
+
+        UIManager[] uiManagers = GameObject.FindObjectsOfType<UIManager>();
+        int highestRank = 10;
+        foreach (UIManager manager in uiManagers){
+            if (manager.hiearchy < highestRank){
+                uiManager = manager;
+                highestRank = manager.hiearchy;
+            }
+        }
     }
 
     void Start() {
@@ -42,7 +50,7 @@ public class PlayerController : MonoBehaviour
     float camRotation;
 
     private void Update() {
-        if (cameraCanMove && !uiManager.inMenu) {
+        if (cameraCanMove) {
             PickUp();
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
             pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
@@ -53,7 +61,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if (playerCanMove && !uiManager.inMenu) {
+        if (playerCanMove) {
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
             Vector3 velocity = rb.velocity;
